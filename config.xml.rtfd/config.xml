@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+xmlns:context="http://www.springframework.org/schema/context" 
+xmlns:p="http://www.springframework.org/schema/p" 
+xmlns:tx="http://www.springframework.org/schema/tx" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context.xsd 
+http://www.springframework.org/schema/tx 
+http://www.springframework.org/schema/tx/spring-tx.xsd">  
+<bean id="hello" class="chip22.batch.Spring"></bean>
+<bean id="hi" class="chip22.batch.Student">
+       <property name="roll" value="31"/>
+	  <property name="name" value="bhargav"/>
+	  <property name="email" value="bhargav@gmail.com"/>
+		
+</bean>
+<bean id="demo" class="chip22.batch.Student">
+		<property name="roll" value="61"/>
+		<property name="name" value="sarvesh"/>
+</bean>
+<bean id="del" class="chip22.batch.parent">
+	<property name="pid" value="12"/>
+	<property name="pname" value="sarvesh"/>
+	<property name="plocation" value="hyderabad"/>
+	<property name="Student" ref="hi"/>
+
+</bean>
+<bean id="dem" class="chip22.batch.college">
+<constructor-arg index="0" value="34"/>
+<constructor-arg index="1" value="bahed"/>
+<constructor-arg index="2" value="agj@gmail"/>
+<constructor-arg index="3" ref="del"/>
+
+</bean>
+<bean id="abd" class="chip22.batch.Audience">
+	<property name="Aname" value="bhargav"/>
+	<property name="Alocation" value="hyderabad"/>
+	
+</bean>
+<bean id="arrow" class="chip22.batch.gener">
+	<property name="movie" value="romantic"/>
+	<property name="Audience" ref="abd"/>
+	
+</bean> 
+<bean id="sachin" class="chip22.batch.review">
+	<constructor-arg index="0" value="blockbuster"/>
+	<constructor-arg index="1" ref="arrow"/>
+</bean>
+<bean id="delta" class="chip22.batch.practice">
+	<property name="name" value="bhargav"/>
+		<property name="section" value="A"/>
+		<property name="cname" value="sasi"/>
+		<property name="marks" value="89"/>
+	
+
+</bean>
+<bean id="de" class="chip22.batch.model">
+<constructor-arg index="0" value="34"/>
+<constructor-arg index="1" value="bhargav"/>
+<constructor-arg index="2" value="Ece"/>
+<constructor-arg index="3" value="25000"/>
+
+</bean>
+<!--  <context:component-scan base-package="chip22.batch"></context:component-scan>-->
+ </beans>
